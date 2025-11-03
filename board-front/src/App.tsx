@@ -17,6 +17,7 @@ import { BOARD_PATH } from 'constant';
 import { BOARD_WRITE_PATH } from 'constant';
 import { BOARD_DETAIL_PATH } from 'constant';
 import { BOARD_UPDATE_PATH } from 'constant';
+import { CookiesProvider } from 'react-cookie';
 
 //          component: Application 컴포넌트          //
 function App() {
@@ -30,20 +31,22 @@ function App() {
   // description: 게시물 작성하기 : '/board/write' - BoardWrite(component) //
   // description: 게시물 수정하기 : '/board/update/:boardNumber' - BoardUpdate(component) //
   return (
-    <Routes>
-      <Route element={<Container />}>
-        <Route path={MAIN_PATH()} element={<Main />}/>
-        <Route path={AUTH_PATH()} element={<Authentication />}/>
-        <Route path={SEARCH_PATH(':searchWord')} element={<Search />}/>
-        <Route path={USER_PATH(':userEmail')} element={<User />}/>
-        <Route path={BOARD_PATH()}>
-          <Route path={BOARD_WRITE_PATH()} element={<BoardWriter />}/>
-          <Route path={BOARD_DETAIL_PATH(':boardNumber')} element={<BoardDetail />}/>
-          <Route path={BOARD_UPDATE_PATH(':boardNumber')} element={<BoardUpdate />}/>
+    <CookiesProvider>
+      <Routes>
+        <Route element={<Container />}>
+          <Route path={MAIN_PATH()} element={<Main />}/>
+          <Route path={AUTH_PATH()} element={<Authentication />}/>
+          <Route path={SEARCH_PATH(':searchWord')} element={<Search />}/>
+          <Route path={USER_PATH(':userEmail')} element={<User />}/>
+          <Route path={BOARD_PATH()}>
+            <Route path={BOARD_WRITE_PATH()} element={<BoardWriter />}/>
+            <Route path={BOARD_DETAIL_PATH(':boardNumber')} element={<BoardDetail />}/>
+            <Route path={BOARD_UPDATE_PATH(':boardNumber')} element={<BoardUpdate />}/>
+          </Route>
+            <Route path='*' element={<h1>404 Not Found</h1>} /> 
         </Route>
-          <Route path='*' element={<h1>404 Not Found</h1>} /> 
-      </Route>
-    </Routes>
+      </Routes>
+    </CookiesProvider>
   );
 }
 
