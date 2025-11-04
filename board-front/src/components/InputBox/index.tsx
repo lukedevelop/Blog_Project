@@ -10,7 +10,7 @@ interface Props {
     setValue: Dispatch<SetStateAction<string>>;
     error: boolean;
 
-    icon?: string; //필수인지아닌지
+    icon?: 'eye-light-off-icon' | 'eye-light-on-icon' | 'expand-right-light-icon'; //필수인지아닌지
     onButtonClick?: () => void;
 
     message?: string;
@@ -44,7 +44,7 @@ const onKeyDownHandler = (event: KeyboardEvent<HTMLInputElement>) =>{
             <div className={error ? 'inputbox-container-error' : 'inputbox-container'} >
                 <input ref={ref} type={type} className='input' placeholder={placeholder} value={value} onChange={onChangeHandler} onKeyDown={onKeyDownHandler}/>
                 {onButtonClick !== undefined &&
-                 <div className='icon-button'>
+                 <div className='icon-button' onClick={onButtonClick}>
                     {icon !== undefined && <div className={`icon ${icon}`}></div>}
                 </div>
                 }
