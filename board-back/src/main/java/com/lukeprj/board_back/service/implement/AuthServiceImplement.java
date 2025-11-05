@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.lukeprj.board_back.dto.request.auth.SignInRequestDto;
 import com.lukeprj.board_back.dto.request.auth.SignUpRequestDto;
-import com.lukeprj.board_back.dto.response.ResponseDTO;
+import com.lukeprj.board_back.dto.response.ResponseDto;
 import com.lukeprj.board_back.dto.response.auth.SignInResponseDto;
 import com.lukeprj.board_back.dto.response.auth.SignUpResponseDto;
 import com.lukeprj.board_back.entity.UserEntity;
@@ -54,7 +54,7 @@ public class AuthServiceImplement implements AuthService {
 
         } catch (Exception exception) {
             exception.printStackTrace();
-            return ResponseDTO.databaseError();
+            return ResponseDto.databaseError();
         }
 
         return SignUpResponseDto.success();
@@ -82,7 +82,7 @@ public class AuthServiceImplement implements AuthService {
             
         } catch (Exception exception) {
             exception.printStackTrace();
-            return ResponseDTO.databaseError();
+            return ResponseDto.databaseError();
         }
 
         return SignInResponseDto.success(token);

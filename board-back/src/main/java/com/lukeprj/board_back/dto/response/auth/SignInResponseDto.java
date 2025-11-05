@@ -5,12 +5,12 @@ import org.springframework.http.ResponseEntity;
 
 import com.lukeprj.board_back.common.ResponseCode;
 import com.lukeprj.board_back.common.ResponseMessage;
-import com.lukeprj.board_back.dto.response.ResponseDTO;
+import com.lukeprj.board_back.dto.response.ResponseDto;
 
 import lombok.Getter;
 
 @Getter
-public class SignInResponseDto extends ResponseDTO {
+public class SignInResponseDto extends ResponseDto {
 
     private String token;
     private int expirationTime;
@@ -27,8 +27,8 @@ public class SignInResponseDto extends ResponseDTO {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    public static ResponseEntity<ResponseDTO> signInFail(){
-        ResponseDTO result = new ResponseDTO(ResponseCode.SIGN_IN_FAIL, ResponseMessage.SIGN_IN_FAIL);
+    public static ResponseEntity<ResponseDto> signInFail(){
+        ResponseDto result = new ResponseDto(ResponseCode.SIGN_IN_FAIL, ResponseMessage.SIGN_IN_FAIL);
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(result);
     }
