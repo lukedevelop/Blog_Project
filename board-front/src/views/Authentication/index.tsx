@@ -144,7 +144,25 @@ export default function Authentication() {
 
     //          render: sign up card 렌더링          //
     return(
-      <div className='auth-card'></div>
+      <div className='auth-card'>
+        <div className='auth-card-box'>
+          <div className='auth-card-top'>
+            <div className='auth-card-title-box'>
+              <div className='auth-card-title'>{'회원가입'}</div>
+              <div className='auth-card-page'>{`1/2`}</div>
+            </div>
+            <InputBox />
+            <InputBox />
+            <InputBox />
+          </div>
+          <div className='auth-card-bottom'>
+            <div className='black-large-full-button'>{'다음 단계'}</div>
+            <div className='auth-description-box'>
+              <div className='auth-description'>{'이미 계정이 있으신가요? '}<span className='auth-desfription-link'>{'로그인'}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   };
   //          render: 인증 화면 렌더링          //
