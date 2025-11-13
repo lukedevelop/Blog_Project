@@ -11,10 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lukeprj.board_back.dto.request.board.PostBoardRequestDto;
+import com.lukeprj.board_back.dto.request.board.PostCommentRequestDto;
 import com.lukeprj.board_back.dto.response.board.PostBoardResponseDto;
+import com.lukeprj.board_back.dto.response.board.PostCommentResponseDto;
 import com.lukeprj.board_back.dto.response.board.PutFavoriteResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetBoardResponseDto;
+import com.lukeprj.board_back.dto.response.board.GetCommentListResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetFavoriteListResponseDto;
+import com.lukeprj.board_back.dto.response.board.IncreaseViewCountResponseDto;
 import com.lukeprj.board_back.service.BoardService;
 
 import jakarta.validation.Valid;
@@ -43,12 +47,38 @@ public class BoardController {
         return response;
     }
 
+    @GetMapping("/{boardNumber}/comment-list")
+    public ResponseEntity<? super GetCommentListResponseDto> getCommentList(
+        @PathVariable("boardNumber") Integer boardNumber
+    ){
+        ResponseEntity<? super GetCommentListResponseDto> response = boardService.getCommetnList(boardNumber);
+        return response;
+    }
+
+    @GetMapping("/{boardNumber}/increase-view-count")
+    public ResponseEntity<? super IncreaseViewCountResponseDto> inreaseViewCount(
+        @PathVariable("boardNumber") Integer boardNumber
+    ){
+        ResponseEntity<? super IncreaseViewCountResponseDto> response = boardService.increaseViewCount(boardNumber);
+        return response;
+    }
+
     @PostMapping("")
     public ResponseEntity<? super PostBoardResponseDto> postBoard(
         @RequestBody @Valid PostBoardRequestDto requestBody,
         @AuthenticationPrincipal String email
     ){
         ResponseEntity<? super PostBoardResponseDto> response = boardService.postBoard(requestBody, email);
+        return response;
+    }
+
+    @PostMapping("/{boardNumber}/comment")
+    public ResponseEntity<? super PostCommentResponseDto> postComment(
+        @RequestBody @Valid PostCommentRequestDto requestBody,
+        @PathVariable("boardNumber") Integer boardNumber,
+        @AuthenticationPrincipal String email
+    ){
+        ResponseEntity<? super PostCommentResponseDto> response = boardService.postComment(requestBody, boardNumber, email);
         return response;
     }
 
@@ -60,5 +90,7 @@ public class BoardController {
         ResponseEntity<? super PutFavoriteResponseDto> response = boardService.putFavorite(boardNumber, email);
         return response;
     }
+
+    
 
 }
