@@ -19,6 +19,7 @@ import com.lukeprj.board_back.dto.response.board.GetBoardResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetCommentListResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetFavoriteListResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetLatestBoardListResponseDto;
+import com.lukeprj.board_back.dto.response.board.GetSearchBoardListResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetTop3BoardListResponseDto;
 import com.lukeprj.board_back.dto.response.board.IncreaseViewCountResponseDto;
 import com.lukeprj.board_back.dto.response.board.PatchBoardResponseDto;
@@ -30,11 +31,13 @@ import com.lukeprj.board_back.entity.BoardListViewEntity;
 import com.lukeprj.board_back.entity.CommentEntity;
 import com.lukeprj.board_back.entity.FavoriteEntity;
 import com.lukeprj.board_back.entity.ImageEntity;
+import com.lukeprj.board_back.entity.SearchLogEntity;
 import com.lukeprj.board_back.repository.BoardListViewRepository;
 import com.lukeprj.board_back.repository.BoardRepository;
 import com.lukeprj.board_back.repository.CommentRepository;
 import com.lukeprj.board_back.repository.FavoriteRepository;
 import com.lukeprj.board_back.repository.ImageRepository;
+import com.lukeprj.board_back.repository.SearchLogRepository;
 import com.lukeprj.board_back.repository.UserRepository;
 import com.lukeprj.board_back.repository.resultSet.GetBoardResultSet;
 import com.lukeprj.board_back.repository.resultSet.GetCommentListResultSet;
@@ -52,6 +55,7 @@ public class BoardServiceImplement implements BoardService {
     private final ImageRepository imageRepository;
     private final CommentRepository commentRepository;
     private final FavoriteRepository favoriteRepository;
+    private final SearchLogRepository searchLogRepository;
     private final BoardListViewRepository boardListViewRepository;
     
     @Override
@@ -152,6 +156,32 @@ public class BoardServiceImplement implements BoardService {
         }
 
         return GetTop3BoardListResponseDto.success(boardListViewEntities);
+    }
+
+    @Override
+    public ResponseEntity<? super GetSearchBoardListResponseDto> getSearchBoardList(String searchWord, String preSearchWord) {
+        
+        List<BoardListViewEntity> boardListViewEntities = new ArrayList<>();
+
+        try {
+
+            boardListViewEntities = boardListViewRepository.findByTitleContainsOrContentContainsOrderByWriteDatetimeDesc(searchWord, searchWord);
+
+            SearchLogEntity searchLogEntity = new SearchLogEntity(searchWord, preSearchWord, false);
+            searchLogRepository.save(searchLogEntity);
+
+            boolean relation = preSearchWord != null;
+            if(relation){
+                searchLogEntity = new SearchLogEntity(preSearchWord, searchWord, relation);
+                searchLogRepository.save(searchLogEntity);
+            }
+            
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+
+        return GetSearchBoardListResponseDto.success(boardListViewEntities);
     }
 
     @Override
@@ -324,6 +354,8 @@ public class BoardServiceImplement implements BoardService {
 
         return DeleteBoardResponseDto.success();
     }
+
+    
 
 
 }

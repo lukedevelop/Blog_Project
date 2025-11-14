@@ -9,6 +9,7 @@ import com.lukeprj.board_back.dto.response.board.GetBoardResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetCommentListResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetFavoriteListResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetLatestBoardListResponseDto;
+import com.lukeprj.board_back.dto.response.board.GetSearchBoardListResponseDto;
 import com.lukeprj.board_back.dto.response.board.GetTop3BoardListResponseDto;
 import com.lukeprj.board_back.dto.response.board.IncreaseViewCountResponseDto;
 import com.lukeprj.board_back.dto.response.board.PatchBoardResponseDto;
@@ -23,6 +24,7 @@ public interface BoardService {
     ResponseEntity<? super GetCommentListResponseDto> getCommetnList(Integer boardNumber);
     ResponseEntity<? super GetLatestBoardListResponseDto> getLatestBoardList();
     ResponseEntity<? super GetTop3BoardListResponseDto> getTop3BoardList();
+    ResponseEntity<? super GetSearchBoardListResponseDto> getSearchBoardList(String searchWord, String preSearchWord);
     ResponseEntity<? super PostBoardResponseDto> postBoard(PostBoardRequestDto dto, String email);   
     ResponseEntity<? super PostCommentResponseDto> postComment(PostCommentRequestDto dto, Integer boardNumber, String email);
     ResponseEntity<? super PutFavoriteResponseDto> putFavorite(Integer boardNumber, String email);
