@@ -3,8 +3,7 @@
 ## Introduce
 <img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/766413ff-1529-4bf2-b85c-31634ba60165">
 
--  http://treecommunity.cafe24.com
--  4개의 카테고리로 나뉘어 사용자들의 필요한 정보 또는 궁금증, 자유롭게 작성 할 수 있는 커뮤니티 사이트.
+- 커뮤니티형 콘텐츠 공유를 원하는 사람들 및 블로그 글쓰기를 즐기거나, 다양한 주제의 글을 읽고 싶은 사용자.
 
 
 ## 기술 도구
@@ -12,9 +11,9 @@
 - **MyBatis**
 - **thymeleaf, JavaScript, JQuery, Ajax**
 - **HTML, CSS, Bootstrap**
-- **IntelliJ,  MySQL Workbench**
-- **cafe24 호스팅, filezilla, putty**
-- **Open Weather API**
+- **IntelliJ, MySQL Workbench**
+
+
 
 ## 기능
 - 자유, 스포츠, 여행/음식, 교육/금융/IT 게시글 작성 및 수정, 삭제
