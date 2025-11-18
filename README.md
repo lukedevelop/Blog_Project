@@ -1,7 +1,7 @@
 # Luke Daily Blog
 
 ## Introduce
-<img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/lukedevelop/TreeCommunity/assets/102365004/1bbedb9e-ed7c-4528-b7d1-802a5f78a460">
+<img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/766413ff-1529-4bf2-b85c-31634ba60165">
 
 -  http://treecommunity.cafe24.com
 -  4개의 카테고리로 나뉘어 사용자들의 필요한 정보 또는 궁금증, 자유롭게 작성 할 수 있는 커뮤니티 사이트.
