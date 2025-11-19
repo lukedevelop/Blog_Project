@@ -3,6 +3,7 @@
 ## Introduce
 <img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/766413ff-1529-4bf2-b85c-31634ba60165">
 
+- 개인 프로젝트
 - 커뮤니티형 콘텐츠 공유를 원하는 사람들 및 블로그 글쓰기를 즐기거나, 다양한 주제의 글을 읽고 싶은 사용자.
 
 
