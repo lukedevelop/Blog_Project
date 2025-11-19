@@ -10,9 +10,8 @@
 - **Backend : Spring Boot, Java, JPA, Gradle**
 - **Frontend : React, TypeScript, CSS, HTML**
 - **Database : MySQL, MariaDB**
-- **인증 및 통신 : JWT, Axios, Async, Await**
 - **IDE : VScode**
-
+- **형상 관리 : Github**
 
 
 ## 기능
@@ -28,29 +27,33 @@
 
 ### 1. 게시글 작성 및 수정, 삭제
 
-- 4개의 각 카테고리의 맞게 게시글 작성
-- 
-<img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/lukedevelop/TreeCommunity/assets/102365004/e9aee14c-d47a-419b-8134-b9eaab29dacb">
-<img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/lukedevelop/TreeCommunity/assets/102365004/528d263d-125e-4ee2-bebc-5de45c84c1e6">
+- 블로그 게시글 작성, 수정, 삭제, 사진 업로드
+
+<img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/be6341d9-9714-45d0-882b-4c0ab026d87a">
 
 
 ## 2. 회원가입, 로그인, 개인정보
 
 - 회원가입 (유효성을 통한 보안 강화), 로그인, 개인정보(개인 프로필 사진 첨부)
-- 
-<img width="800" alt="스크린샷 2023-01-06 오후 11 47 04" src="https://github.com/lukedevelop/TreeCommunity/assets/102365004/15b95459-da90-423e-8b7b-7bc177a3dff7">
+  
+<img width="800" alt="스크린샷 2023-01-06 오후 11 47 04" src="https://github.com/user-attachments/assets/b29f8b1f-688f-4b7d-a864-277fbd1a4bd6">
+<img width="800" alt="스크린샷 2023-01-06 오후 11 47 04" src="https://github.com/user-attachments/assets/bf95aceb-77e0-4b5a-819c-ac9aff997f1a">
+<img width="800" alt="스크린샷 2023-01-06 오후 11 47 04" src="https://github.com/user-attachments/assets/a3dd1c09-0e11-4f63-9608-22d7badb6b63">
+<img width="800" alt="스크린샷 2023-01-06 오후 11 47 04" src="https://github.com/user-attachments/assets/b0c8577b-38d1-4746-b9e1-270dabcad1f3">
+<img width="800" alt="스크린샷 2023-01-06 오후 11 47 04" src="https://github.com/user-attachments/assets/2fd25f6b-656e-4dfa-ae6c-3ae3bd7684b0">
 
 
 ## 3. 검색 및 인기 검색어 목록 제공 (검색 결과 기반)
 
-- 댓글을 통해 사용자들 간의 개인 의견 자유롭게 작성
-- 사용자들이 보기 편리하게 페이징 처리
+- 내용 및 제목 전체를 포함해 검색 가능 기능
+- 자주 사용된 검색어 인기 검색어 목록에 게시
 
-<img width="800" alt="스크린샷 2023-01-07 오전 12 03 16" src="https://github.com/lukedevelop/TreeCommunity/assets/102365004/eed168c6-f827-4a67-af5c-83888474cced">
+<img width="800" alt="스크린샷 2023-01-07 오전 12 03 16" src="https://github.com/user-attachments/assets/09df2ab7-cba8-4a12-8b31-87136ed703a3">
+<img width="800" alt="스크린샷 2023-01-07 오전 12 03 16" src="https://github.com/user-attachments/assets/92a328ec-2a66-4430-a28d-aa3af5cd40e9">
 
-## 4. 댓글, 페이징 처리
+## 4. 댓글, 좋아요, 페이징 처리
 
-- 사용자들에게 일일 날씨 정보 제공
+- 게시물별 댓글 및 좋아요 기능
   
-<img width="800" alt="스크린샷 2023-01-07 오전 12 03 16" src="https://github.com/lukedevelop/TreeCommunity/assets/102365004/1bbedb9e-ed7c-4528-b7d1-802a5f78a460">
+<img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/2473e7fb-8ac8-4a19-a3dc-a60e2241f16b">
    
