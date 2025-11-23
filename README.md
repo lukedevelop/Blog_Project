@@ -31,6 +31,7 @@
 - 블로그 게시글 작성, 수정, 삭제, 사진 업로드
 
 <img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/be6341d9-9714-45d0-882b-4c0ab026d87a">
+<img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/c515b347-f927-4ea0-9ab1-c661257d61a6">
 
 
 ## 2. 회원가입, 로그인, 개인정보
