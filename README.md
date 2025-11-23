@@ -58,4 +58,4 @@
 - 게시물별 댓글 및 좋아요 기능
   
 <img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/2473e7fb-8ac8-4a19-a3dc-a60e2241f16b">
-   
+<img width="800" alt="스크린샷 2023-01-06 오후 11 39 08" src="https://github.com/user-attachments/assets/4ab08e61-1503-4b1b-9a42-f10e2dc2061a">   
